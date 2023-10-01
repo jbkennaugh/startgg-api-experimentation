@@ -1,0 +1,6 @@
+{
+    "eventId": "query EventQuery($slug:String) {event(slug: $slug) {id name}}",
+    "phaseId": "query PhaseQuery($slug:String) {event(slug: $slug) {phases {id}}}",
+    "standings": "query EventStandings($eventId: ID!, $page: Int!, $perPage: Int!) {event(id: $eventId) {id name standings(query: {perPage: $perPage,page: $page}){nodes {placement entrant {id name}}}}}",
+    "sets": "query EventSets($eventId: ID!, $page: Int!, $perPage: Int!) { event(id: $eventId) {sets(page: $page perPage: $perPage sortType: STANDARD) {pageInfo {total} nodes {id slots {entrant {name}}}}}}"
+}
